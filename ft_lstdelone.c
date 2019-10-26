@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 12:10:21 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/25 18:07:12 by iounejja         ###   ########.fr       */
+/*   Created: 2019/10/26 12:58:09 by iounejja          #+#    #+#             */
+/*   Updated: 2019/10/26 15:59:37 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list *str;
-
-	str = malloc(sizeof(t_list));
-	if (str)
-	{
-		str->content = content;
-		str->next = NULL;
-	}
-	return (str);
+	del(lst->content);
+	free(lst);
 }

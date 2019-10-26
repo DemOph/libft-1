@@ -6,7 +6,7 @@
 #    By: iounejja <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 11:08:59 by iounejja          #+#    #+#              #
-#    Updated: 2019/10/25 16:37:16 by iounejja         ###   ########.fr        #
+#    Updated: 2019/10/26 16:30:35 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,10 @@ SRCS = ft_memset.c \
 	  ft_lstadd_front.c \
 	  ft_lstsize.c \
 	  ft_lstlast.c \
-	  ft_lstadd_back.c
+	  ft_lstadd_back.c \
+	  ft_lstdelone.c \
+	  ft_lstclear.c \
+	  ft_lstiter.c
 
 OBJ = $(SRCS:.c=.o)
 
