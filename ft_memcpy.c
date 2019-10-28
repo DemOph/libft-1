@@ -6,23 +6,23 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:48:46 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/23 12:35:26 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/27 17:32:29 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "string.h"
 
-void	*ft_memcpy(void *dest, void *src, size_t l)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
 	size_t i;
 
 	i = 0;
-	if (!dest && !src)
+	if (!dst && !src)
 		return (NULL);
-	while (i < l)
+	while (i < n)
 	{
-		*(char*)(dest + i) = *(char*)(src + i);
+		*(char*)(dst + i) = *(char*)(src + i);
 		i++;
 	}
-	return (dest);
+	return (dst);
 }

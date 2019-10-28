@@ -6,18 +6,18 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:01:33 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/23 19:54:06 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/28 17:38:03 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char const *str)
+size_t	ft_strlen(char const *s)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }

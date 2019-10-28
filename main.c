@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:19:41 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/26 18:34:22 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/28 18:45:49 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		main()
 	//printf("ft_strlen = %d\n", ft_strlen("Hello World!"));
 	
 	//-- ft_atoi
-	//printf("ft_atoi = %d\n", ft_atoi("51973484"));
+	//printf("ft_atoi = %d\natoi = %d\n", ft_atoi("1544516489654456167561"), atoi("1544516489654456167561"));
 	
 	//-- ft_isdigit
 	//printf("ft_isdigit = %d\n", ft_isdigit(97));
@@ -107,7 +107,7 @@ int		main()
 	//printf("ft_strjoin = %s\n", ft_strjoin(s1, s2));
 	
 	//-- ft_strtrim
-	//printf("ft_strtrim = %s", ft_strtrim("abababab", "ab"));
+	//printf("ft_strtrim = %s", ft_strtrim("\n \t  fghdfghdfg \n\t \n", " \n\t"));
 	
 	//-- ft_putchar_fd
 	//ft_putchar_fd('c', fd);
@@ -135,18 +135,30 @@ int		main()
 		printf("%s\n", *tab);
 		tab++;
 	}*/
+	
 	int i;
 	t_list *lst;
 	t_list *new;
+	t_list *ls1;
+	t_list *ls2;
+	t_list *ls3;
 
 	i = 1;
 	new = ft_lstnew("world");
 	lst = ft_lstnew("hello");
+	ls1 = ft_lstnew("issam");
+	ls2 = ft_lstnew("ounejjar");
+	ls3 = ft_lstnew("Lucifer");
+	ft_lstadd_front(&lst, ls1);
+	ft_lstadd_front(&ls1, ls2);
 	ft_lstadd_back(&lst, new);
-	while (lst)
+	ft_lstadd_back(&ls2, ls3);
+	printf("list size = %d\n", ft_lstsize(ls2));
+	printf("the last ele is = %s\n", (char*)ft_lstlast(ls2)->content);
+	while (ls2)
 	{
-		printf("ele list %d = %s\n", i, lst->content);
-		lst = lst->next;
+		printf("ele list %d = %s\n", i, ls2->content);
+		ls2 = ls2->next;
 		i++;
 	}
 }

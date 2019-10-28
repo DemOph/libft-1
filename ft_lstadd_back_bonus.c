@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 17:54:44 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/28 13:00:16 by iounejja         ###   ########.fr       */
+/*   Created: 2019/10/25 16:26:47 by iounejja          #+#    #+#             */
+/*   Updated: 2019/10/28 13:48:35 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	int i;
-	int n;
-	int nb;
-
-	i = 0;
-	n = 1;
-	nb = 0;
-	while (str[i] == ' ' || str[i] == '\t' ||
-			str[i] == '\n' || str[i] == '\v' ||
-			str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	if (*alst == NULL)
 	{
-		if (str[i] == '-')
-			n = -1;
-		i++;
+		*alst = new;
+		return ;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	else
 	{
-		nb = nb * 10 + str[i] - 48;
-		i++;
+		while ((*alst)->next != NULL)
+			(*alst) = (*alst)->next;
+		new->next = NULL;
+		(*alst)->next = new;
 	}
-	return (nb * n);
 }

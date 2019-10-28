@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 17:54:44 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/28 13:00:16 by iounejja         ###   ########.fr       */
+/*   Created: 2019/10/25 16:05:14 by iounejja          #+#    #+#             */
+/*   Updated: 2019/10/28 12:49:30 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_lstsize(t_list *lst)
 {
-	int i;
-	int n;
-	int nb;
+	int count;
 
-	i = 0;
-	n = 1;
-	nb = 0;
-	while (str[i] == ' ' || str[i] == '\t' ||
-			str[i] == '\n' || str[i] == '\v' ||
-			str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	count = 0;
+	if (lst)
 	{
-		if (str[i] == '-')
-			n = -1;
-		i++;
+		while (lst != NULL)
+		{
+			count++;
+			lst = lst->next;
+		}
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + str[i] - 48;
-		i++;
-	}
-	return (nb * n);
+	return (count);
 }

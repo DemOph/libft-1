@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 17:54:44 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/28 13:00:16 by iounejja         ###   ########.fr       */
+/*   Created: 2019/10/26 16:01:48 by iounejja          #+#    #+#             */
+/*   Updated: 2019/10/28 16:58:47 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	int i;
-	int n;
-	int nb;
+	t_list *list;
 
-	i = 0;
-	n = 1;
-	nb = 0;
-	while (str[i] == ' ' || str[i] == '\t' ||
-			str[i] == '\n' || str[i] == '\v' ||
-			str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	list = *lst;
+	if (list)
 	{
-		if (str[i] == '-')
-			n = -1;
-		i++;
+		while (list != NULL)
+		{
+			del(list->content);
+			free(list);
+			list = list->next;
+		}
+		*lst = NULL;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + str[i] - 48;
-		i++;
-	}
-	return (nb * n);
 }
