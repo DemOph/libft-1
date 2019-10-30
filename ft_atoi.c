@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:44 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/28 13:00:16 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/30 13:32:00 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,29 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int n;
-	int nb;
+	int		i;
+	int		n;
+	long	nb;
+	long	val;
 
 	i = 0;
 	n = 1;
 	nb = 0;
-	while (str[i] == ' ' || str[i] == '\t' ||
-			str[i] == '\n' || str[i] == '\v' ||
-			str[i] == '\f' || str[i] == '\r')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
+	if (str[i] == '-')
+		n = -1;
 	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			n = -1;
 		i++;
-	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = nb * 10 + str[i] - 48;
-		i++;
+		val = nb;
+		nb = ((nb * 10) + (str[i++] - 48) * n);
+		if (n == 1 && val > nb)
+			return (-1);
+		if (n == -1 && val < nb)
+			return (0);
 	}
-	return (nb * n);
+	return (nb);
 }

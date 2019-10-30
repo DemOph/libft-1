@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:22:05 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/27 17:51:01 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/30 12:43:20 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int					ft_isascii(int c);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *restrict dst, const void *src, size_t n);
-void				*ft_memccpy(void *restrict dest, const void *restrict src, int c, size_t n);
+void				*ft_memccpy(void *restrict dest, const void *restrict src,
+					int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(void *s, int c, size_t n);
 void				*ft_calloc(size_t ne, size_t l);
@@ -43,7 +44,8 @@ void				ft_putnbr_fd();
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char				*ft_strnstr(const char *haystack, const char *needle,
+					size_t len);
 char				*ft_strdup(char *str);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
@@ -51,8 +53,10 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_itoa(int n);
 char				**ft_split(char const *s, char c);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-size_t				ft_strlcpy(char * restrict dst, const char * restrict src, size_t size);
-size_t				ft_strlcat(char * restrict dst, const char * restrict src, size_t size);
+size_t				ft_strlcpy(char *restrict dst, const char *restrict src,
+					size_t size);
+size_t				ft_strlcat(char *restrict dst, const char *restrict src,
+					size_t size);
 
 typedef	struct		s_list
 {
@@ -68,6 +72,7 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 
 #endif

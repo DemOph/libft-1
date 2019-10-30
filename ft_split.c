@@ -6,13 +6,13 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 16:00:45 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/25 13:19:12 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/30 14:37:44 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		n_words(char const *str, char c)
+static int		n_words(char const *str, char c)
 {
 	int i;
 	int count;
@@ -36,7 +36,7 @@ int		n_words(char const *str, char c)
 	return (count);
 }
 
-int		l_words(char const *str, int i, char c)
+static int		l_words(char const *str, int i, char c)
 {
 	int l;
 
@@ -52,7 +52,18 @@ int		l_words(char const *str, int i, char c)
 	return (l);
 }
 
-char	**ft_split(char const *s, char c)
+static char		**ft_free(char **tab, int count)
+{
+	int i;
+
+	i = 0;
+	while (i <= count)
+		free(tab[i++]);
+	free(tab);
+	return (NULL);
+}
+
+char			**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -71,7 +82,7 @@ char	**ft_split(char const *s, char c)
 		{
 			k = 0;
 			if (!(tab[j] = malloc(sizeof(char) * (l_words(s, i, c) + 1))))
-				return (NULL);
+				return (ft_free(tab, j));
 			while (s[i] != c && s[i] != '\0')
 				tab[j][k++] = s[i++];
 			tab[j++][k] = '\0';

@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 15:34:55 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/23 19:55:56 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/30 13:37:21 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	int		i;
-	int		j;
 	char	*str;
 
 	i = 0;
-	j = start;
 	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))

@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:19:41 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/28 18:45:49 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/30 14:43:22 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 int		main()
 {
-	//char s1[] = "Hello";
-	//char s2[] = "World!";
-	//char dest[] = "Hello";
-	//char src[] = "World!";
+	char *s1;
+	char s2[] = "Ounejjar";
+	//char dest[] = "Issam";
+	//char src[] = "Ounejjar";
 	//char *ptr;
 	//ptr = (char*)ft_calloc(0, 0);
 	//int nb = 5;
-	//int fd = open("txt", O_WRONLY);
+	int fd = open("txt", O_WRONLY);
 	
 	//-- ft_stlen
 	//printf("ft_strlen = %d\n", ft_strlen("Hello World!"));
 	
 	//-- ft_atoi
-	//printf("ft_atoi = %d\natoi = %d\n", ft_atoi("1544516489654456167561"), atoi("1544516489654456167561"));
+	//printf("ft_atoi = %d\natoi = %d\n", ft_atoi("1658"), atoi("1658"));
 	
 	//-- ft_isdigit
 	//printf("ft_isdigit = %d\n", ft_isdigit(97));
@@ -48,81 +48,82 @@ int		main()
 	//printf("ft_isalnum = %d\n", ft_isalnum('0'));
 	
 	//-- ft_memset
-	//ft_memset(str + 3, '+', 3);
-	//printf("ft_memset = %s\n", str);
+	//ft_memset(s1 + 3, '+', 10);
+	//printf("ft_memset = %s\n", s1);
 	
-	//-- ft_strcmp
-	//printf("ft_strncmp = %d\n", ft_strncmp("hello", "helLo", 4));
+	//-- ft_strncmp
+	//printf("ft_strncmp = %d\n", ft_strncmp("hello", "hello", 4));
 	
-	//-- ft_strchar
-	//printf("ft_strchar = %s\n", ft_strchr("Hello World!", 'o'));
+	//-- ft_strchr
+	//printf("ft_strchr = %s\n", ft_strchr("Hello World!", 'l'));
 	
 	//-- ft_strrchr
-	//printf("ft_strrchr = %s\n", ft_strrchr("Hello World!", 'o'));
+	//printf("ft_strrchr = %s\n", ft_strrchr("Hello World!", 'l'));
 	
 	//-- ft_isascii
 	//printf("ft_isascii = %d\n", ft_isascii('a'));
 	
 	//-- ft_bzero
-	//ft_bzero(str1 + 3, 2);
-	//printf("ft_bzero = %s\n", str1);
+	//ft_bzero(s1 + 3, 2);
+	//printf("ft_bzero = %s\n", s1);
 	
 	//-- ft_memcpy
-	//ft_memcpy(dest, src, 4);
+	//memcpy(dest, src, 4);
 	//printf("ft_memcpy = %s\n", dest);
 	
 	//-- ft_memccpy
-	//ft_memccpy(dest, src, 'e', sizeof(src));
+	//memccpy(dest, src, 'd', 3);
 	//printf("ft_memccpy = %s\n", dest);
 	
 	//-- ft_memmove
-	//ft_memmove(dest, src, sizeof(src));
+	//memmove(dest, src, 4);
 	//printf("ft_memmove = %s\n", dest);
 	
 	//-- ft_strnstr
 	//printf("ft_strnstr = %s\n", strnstr(str, str1, 7));
 	
 	//-- ft_memchr
-	//printf("ft_memchr = %s\n", ft_memchr("Hello World!", 'l', 4));
+	//printf("ft_memchr = %s\n", ft_memchr("Hello World!", 'r', 12));
 	
 	//-- ft_memcmp
-	//printf("ft_memcmp = %d\n", ft_memcmp(str, str1, sizeof(str1)));
+	//printf("ft_memcmp = %d\n", ft_memcmp(s1, s2, sizeof(s2)));
 	
 	//-- ft_strdup
 	//printf("ft_strdup = %s\n", ft_strdup("Hello World!"));
 	
 	//-- ft_strlcpy
-	//printf("ft_strlcpy = %lu\n", ft_strlcpy(dest, src, sizeof(dest)));
+	//printf("ft_strlcpy = %lu\n strlcpy = %lu\n", ft_strlcpy(dest, src, sizeof(dest)), strlcpy(dest, src, sizeof(dest)));
 	
 	//-- ft_calloc
 	//printf("ft_calloc = %s\n", ptr);
-	
+
+
 	//-- ft_strlcat
-	//printf("ft_strlcat = %zu\n", ft_strlcat(s1, s2, 10));
+	//printf("ft_strlcat = %zu\nstrlcat = %zu\n", ft_strlcat(s1, s2, 2), strlcat(s1, s2, 2));
 	
 	//-- ft_substr
-	//printf("ft_substr = %s\n", ft_substr("Hello World!", 3, 6));
+	//printf("ft_substr = %s\n", ft_substr("Hello World!", 0, 7));
 	
 	//-- ft_strjoin
-	//printf("ft_strjoin = %s\n", ft_strjoin(s1, s2));
+	//printf("ft_strjoin = %s\n", ft_strjoin(s1, ""));
 	
 	//-- ft_strtrim
-	//printf("ft_strtrim = %s", ft_strtrim("\n \t  fghdfghdfg \n\t \n", " \n\t"));
+	//printf("ft_strtrim = %s", ft_strtrim("wa b c \n \t\n abcHello World!cba \n\n\n\n\n\t      \t \t           \t\n aaaa bbbbbbbababbccccbcbcabw", "abc \n\t"));
 	
 	//-- ft_putchar_fd
-	//ft_putchar_fd('c', fd);
+	//ft_putchar_fd('n', fd);
 	
 	//-- ft_putstr_fd
-	//ft_putstr_fd(s1, fd);
+	//ft_putstr_fd("Hello", fd);
 	
 	//-- ft_putendl_fd
 	//ft_putendl_fd(s1, fd);
 	
 	//-- ft_putnbr_fd
-	//ft_putnbr_fd(nb, fd);
+	ft_putnbr_fd(-20, fd);
 	
 	//-- ft_itoa
-	//printf("ft_itoa = %s\n", ft_itoa(-2147483648));
+	//printf("ft_itoa = %s\n", ft_itoa(2147483647));
 	
 	//-- ft_strmapi
 	//printf("ft_strmapi = %s\n", ft_strmapi(5, ft_strdup("hello")));
@@ -135,7 +136,8 @@ int		main()
 		printf("%s\n", *tab);
 		tab++;
 	}*/
-	
+
+	/*	
 	int i;
 	t_list *lst;
 	t_list *new;
@@ -161,4 +163,5 @@ int		main()
 		ls2 = ls2->next;
 		i++;
 	}
+	*/
 }

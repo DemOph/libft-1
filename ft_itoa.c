@@ -6,13 +6,13 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 17:38:32 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/25 15:43:48 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/30 14:38:22 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		len_digit(long int nb)
+static int		len_digit(long int nb)
 {
 	int l;
 
@@ -32,7 +32,7 @@ int		len_digit(long int nb)
 	return (l);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	long	nb;
 	int		count;

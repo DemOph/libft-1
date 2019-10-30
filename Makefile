@@ -6,7 +6,7 @@
 #    By: iounejja <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 11:08:59 by iounejja          #+#    #+#              #
-#    Updated: 2019/10/28 12:42:26 by iounejja         ###   ########.fr        #
+#    Updated: 2019/10/29 17:43:34 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,20 +59,20 @@ B_SRCS =	ft_lstnew_bonus.c \
 OBJ = $(SRCS:.c=.o)
 B_OBJ = $(B_SRCS:.c=.o)
 
-all:
-	gcc -c -Wall -Wextra -Werror $(SRCS)
-	ar rc $(NAME) $(OBJ)
+all: $(NAME)
 
-$(NAME): all
+$(NAME): $(OBJ)
+		ar rcs $(NAME) $(OBJ)
 
-bonus:	all
-		gcc -Wall -Wextra -Werror -c $(B_SRCS)
-		ar rc $(NAME) $(B_OBJ)
+bonus:	all $(B_OBJ)
+		ar rcs $(NAME) $(B_OBJ)
 
+%.o : %.c
+	gcc -Wall -Wextra -Werror -c $< -o $@
 clean:
 	rm -f *.o
 
-fclean:
-	rm -f $(NAME)
+fclean:	clean
+		rm -f $(NAME)
 
-re: fclean all clean
+re: fclean all
