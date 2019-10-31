@@ -6,22 +6,27 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:19:41 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/30 14:43:22 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/31 18:40:51 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	del(void *a)
+{
+	free(a);
+}
+
 int		main()
 {
-	char *s1;
-	char s2[] = "Ounejjar";
+	//char *s1;
+	//char s2[] = "Ounejjar";
 	//char dest[] = "Issam";
 	//char src[] = "Ounejjar";
 	//char *ptr;
 	//ptr = (char*)ft_calloc(0, 0);
 	//int nb = 5;
-	int fd = open("txt", O_WRONLY);
+	//int fd = open("txt", O_WRONLY);
 	
 	//-- ft_stlen
 	//printf("ft_strlen = %d\n", ft_strlen("Hello World!"));
@@ -120,24 +125,27 @@ int		main()
 	//ft_putendl_fd(s1, fd);
 	
 	//-- ft_putnbr_fd
-	ft_putnbr_fd(-20, fd);
+	//ft_putnbr_fd(-20, fd);
 	
 	//-- ft_itoa
-	//printf("ft_itoa = %s\n", ft_itoa(2147483647));
+	//char *str = ft_itoa(22455455);
+	//printf("ft_itoa = %s\n", str);
+	//free(str);
 	
 	//-- ft_strmapi
 	//printf("ft_strmapi = %s\n", ft_strmapi(5, ft_strdup("hello")));
 	
 	//-- ft_split
 	/*char **tab;
-	tab = ft_split("HiaHelloahhhhjkauhunjkaaaaaaaissambnhakhuamn", 'a');
+	tab = ft_split("  issam ounejjar                hello", ' ');
 	while (*tab != NULL)
 	{
 		printf("%s\n", *tab);
 		tab++;
 	}*/
 
-	/*	
+	//////////// BONUS ///////////////
+	
 	int i;
 	t_list *lst;
 	t_list *new;
@@ -146,16 +154,20 @@ int		main()
 	t_list *ls3;
 
 	i = 1;
-	new = ft_lstnew("world");
-	lst = ft_lstnew("hello");
-	ls1 = ft_lstnew("issam");
-	ls2 = ft_lstnew("ounejjar");
-	ls3 = ft_lstnew("Lucifer");
-	ft_lstadd_front(&lst, ls1);
-	ft_lstadd_front(&ls1, ls2);
-	ft_lstadd_back(&lst, new);
-	ft_lstadd_back(&ls2, ls3);
-	printf("list size = %d\n", ft_lstsize(ls2));
+	new = ft_lstnew(ft_strdup("world"));
+	lst = ft_lstnew(ft_strdup("hello"));
+	ls1 = ft_lstnew(ft_strdup("issam"));
+//	ls2 = ft_lstnew(ft_strdup("ounejjar"));
+//	ls3 = ft_lstnew(ft_strdup("Lucifer"));
+//	ft_lstadd_front(&new, lst);
+//	ft_lstadd_front(&lst, ls1);
+	ft_lstadd_back(&new, lst);
+	ft_lstadd_back(&new, ls1);
+	
+	//ft_lstdelone(new, del);
+	ft_lstclear(&new, del);
+	//printf("%s", new->content);
+	/*printf("list size = %d\n", ft_lstsize(ls2));
 	printf("the last ele is = %s\n", (char*)ft_lstlast(ls2)->content);
 	while (ls2)
 	{

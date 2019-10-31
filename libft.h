@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:22:05 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/30 12:43:20 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/10/31 14:32:29 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_isprint(int c);
 int					ft_isalnum(int c);
-int					ft_strncmp(const char *s1, const char *s2, int n);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_isascii(int c);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -35,7 +35,7 @@ void				*ft_memcpy(void *restrict dst, const void *src, size_t n);
 void				*ft_memccpy(void *restrict dest, const void *restrict src,
 					int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
-void				*ft_memchr(void *s, int c, size_t n);
+void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_calloc(size_t ne, size_t l);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
