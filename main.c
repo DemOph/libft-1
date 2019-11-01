@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:19:41 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/31 18:40:51 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/01 18:40:39 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 void	del(void *a)
 {
 	free(a);
+}
+
+char	upper(unsigned int r,char c)
+{
+	r = 1;
+	return (c + 1);
 }
 
 int		main()
@@ -133,7 +139,7 @@ int		main()
 	//free(str);
 	
 	//-- ft_strmapi
-	//printf("ft_strmapi = %s\n", ft_strmapi(5, ft_strdup("hello")));
+	//printf("ft_strmapi = %s\n", ft_strmapi("Hello", upper));
 	
 	//-- ft_split
 	/*char **tab;
@@ -157,23 +163,22 @@ int		main()
 	new = ft_lstnew(ft_strdup("world"));
 	lst = ft_lstnew(ft_strdup("hello"));
 	ls1 = ft_lstnew(ft_strdup("issam"));
-//	ls2 = ft_lstnew(ft_strdup("ounejjar"));
-//	ls3 = ft_lstnew(ft_strdup("Lucifer"));
-//	ft_lstadd_front(&new, lst);
-//	ft_lstadd_front(&lst, ls1);
-	ft_lstadd_back(&new, lst);
-	ft_lstadd_back(&new, ls1);
+	ls2 = ft_lstnew(ft_strdup("ounejjar"));
+	ls3 = ft_lstnew(ft_strdup("Lucifer"));
+	lst->next = ls1;
+	ft_lstadd_back(&ls1, ls2);
+	ft_lstadd_back(&ls2, ls3);
+	ft_lstadd_back(&ls3, new);
 	
 	//ft_lstdelone(new, del);
-	ft_lstclear(&new, del);
+	//ft_lstclear(&ls1, del);
 	//printf("%s", new->content);
-	/*printf("list size = %d\n", ft_lstsize(ls2));
-	printf("the last ele is = %s\n", (char*)ft_lstlast(ls2)->content);
-	while (ls2)
+	//printf("list size = %d\n", ft_lstsize(ls2));
+	//printf("the last ele is = %s\n", (char*)ft_lstlast(ls2)->content);
+	while (lst)
 	{
-		printf("ele list %d = %s\n", i, ls2->content);
-		ls2 = ls2->next;
+		printf("ele list %d = %s\n", i, lst->content);
+		lst = lst->next;
 		i++;
 	}
-	*/
 }

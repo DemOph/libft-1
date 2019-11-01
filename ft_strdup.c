@@ -6,29 +6,29 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 20:28:37 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/23 12:41:55 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/01 12:35:31 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(const char *s1)
 {
 	int		i;
-	char	*s;
+	char	*str;
 
 	i = 0;
-	while (str[i])
+	while (s1[i])
 		i++;
-	s = (char*)malloc(sizeof(char) * (i + 1));
-	if (!s)
+	str = (char*)malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (0);
 	i = 0;
-	while (str[i] != '\0')
+	while (s1[i] != '\0')
 	{
-		s[i] = str[i];
+		str[i] = s1[i];
 		i++;
 	}
-	s[i] = '\0';
-	return (s);
+	str[i] = '\0';
+	return (str);
 }
