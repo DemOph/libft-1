@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/26 16:32:48 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/31 13:11:36 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/02 19:46:42 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list *head;
 	t_list *new;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	head = ft_lstnew(f(lst->content));
 	lst = lst->next;

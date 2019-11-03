@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:19:41 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/01 18:40:39 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/03 15:19:09 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,38 @@
 
 void	del(void *a)
 {
-	free(a);
+	*(char*)a = 0;	
 }
 
-char	upper(unsigned int r,char c)
+char	f(unsigned int r,char c)
 {
 	r = 1;
 	return (c + 1);
+}
+
+void	ft(void *str)
+{
+	int i;
+
+	i = 0;
+	while (*(char*)(str + i) != '\0')
+	{
+		*(char*)(str + i) += 1;
+		i++;
+	}
+}
+
+void	*ft_f(void *str)
+{
+	int i;
+
+	i = 0;
+	while (*(char*)(str + i))
+	{
+		*(char*)(str + i) += 1;
+		i++;
+	}
+	return (str);
 }
 
 int		main()
@@ -103,17 +128,18 @@ int		main()
 	//printf("ft_strdup = %s\n", ft_strdup("Hello World!"));
 	
 	//-- ft_strlcpy
-	//printf("ft_strlcpy = %lu\n strlcpy = %lu\n", ft_strlcpy(dest, src, sizeof(dest)), strlcpy(dest, src, sizeof(dest)));
+	//printf("ft_strlcpy = %lu\n", ft_strlcpy(NULL, "gyut", 5));
+	//printf("strlcpy = %lu\n", strlcpy(NULL, "gyut", 5));
 	
 	//-- ft_calloc
 	//printf("ft_calloc = %s\n", ptr);
 
 
 	//-- ft_strlcat
-	//printf("ft_strlcat = %zu\nstrlcat = %zu\n", ft_strlcat(s1, s2, 2), strlcat(s1, s2, 2));
+	//printf("ft_strlcat = %zu\nstrlcat = %zu\n", ft_strlcat(NULL, ft_strdup("Hello"), 0), strlcat(NULL, ft_strdup("Hello"), 0));
 	
 	//-- ft_substr
-	//printf("ft_substr = %s\n", ft_substr("Hello World!", 0, 7));
+	//printf("ft_substr = %s\n", ft_substr("Hello World!", 9, 7));
 	
 	//-- ft_strjoin
 	//printf("ft_strjoin = %s\n", ft_strjoin(s1, ""));
@@ -139,7 +165,7 @@ int		main()
 	//free(str);
 	
 	//-- ft_strmapi
-	//printf("ft_strmapi = %s\n", ft_strmapi("Hello", upper));
+	//printf("ft_strmapi = %s\n", ft_strmapi("abcd", f));
 	
 	//-- ft_split
 	/*char **tab;
@@ -151,7 +177,7 @@ int		main()
 	}*/
 
 	//////////// BONUS ///////////////
-	
+
 	int i;
 	t_list *lst;
 	t_list *new;
@@ -160,25 +186,66 @@ int		main()
 	t_list *ls3;
 
 	i = 1;
-	new = ft_lstnew(ft_strdup("world"));
-	lst = ft_lstnew(ft_strdup("hello"));
-	ls1 = ft_lstnew(ft_strdup("issam"));
-	ls2 = ft_lstnew(ft_strdup("ounejjar"));
-	ls3 = ft_lstnew(ft_strdup("Lucifer"));
-	lst->next = ls1;
-	ft_lstadd_back(&ls1, ls2);
-	ft_lstadd_back(&ls2, ls3);
-	ft_lstadd_back(&ls3, new);
+	//char *r = ft_strdup("ana");
+	//char *y = ft_strdup("ana la3la");
+	//new = ft_lstnew(r);
+	//lst = ft_lstnew(y);
+	
+	char *l1 = ft_strdup("One");
+	char *l2 = ft_strdup("Two");
+	char *l3 = ft_strdup("Three");
+	char *l4 = ft_strdup("Four");
+	ls1 = ft_lstnew(l1);
+	ls2 = ft_lstnew(l2);
+	ls3 = ft_lstnew(l3);
+	new = ft_lstnew(l4);
+	t_list *h = ls1;
+	//ls2 = ft_lstnew(ft_strdup("ounejjar"));
+	//ls3 = ft_lstnew(ft_strdup("Lucifer"));
+	//lst->next = ls1;
+	ft_lstadd_back(&h, ls2);
+	ft_lstadd_back(&h, ls3);
+	ft_lstadd_back(&h, new);
+	//ft_lstadd_back(&ls3, new);
 	
 	//ft_lstdelone(new, del);
-	//ft_lstclear(&ls1, del);
+	//ft_lstclear(&ls3, del);
+	//free(r);
+	//free(y);
+	//free(l1);
+	//free(l2);
+	//free(l3);
+	//free(l4);
 	//printf("%s", new->content);
-	//printf("list size = %d\n", ft_lstsize(ls2));
+	printf("list size = %d\n", ft_lstsize(h));
 	//printf("the last ele is = %s\n", (char*)ft_lstlast(ls2)->content);
-	while (lst)
+	//ft_lstiter(ls1, ft);
+	/*ft_lstmap(ls1, ft_f, del);
+	while (ls1)
 	{
-		printf("ele list %d = %s\n", i, lst->content);
-		lst = lst->next;
-		i++;
+		printf("ft_lstmap = %s\n", ls1->content);
+		ls1 = ls1->next;
 	}
+	while (ls1)
+	{
+		printf("ele list %d = %s\n", i, ls1->content);
+		ls1 = ls1->next;
+		i++;
+	}*/
+	/*
+	t_list **head;
+	t_list *list1;
+	t_list *list2;
+	int i;
+
+	i = 0;
+	list1 = ft_lstnew(ft_strdup("One"));
+	list2 = ft_lstnew(ft_strdup("Two"));
+	ft_lstadd_back(&list1, list2);
+	//ft_lstadd_back(&list1, list);
+	while (list1->next)
+	{
+		printf("list -> %d = %s", i, list1->content);
+		list1 = list1->next;
+	}*/
 }

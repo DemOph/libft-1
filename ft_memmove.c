@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 16:32:51 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/01 20:10:39 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/03 13:36:37 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t i;
 
 	i = 0;
+	if (!dst && !src)
+		return (NULL);
 	if (dst > src)
 	{
 		while (len--)
@@ -25,8 +27,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 		return (dst);
 	}
-	if (!dst && !src)
-		return (NULL);
 	while (i < len)
 	{
 		*(char*)(dst + i) = *(char*)(src + i);
