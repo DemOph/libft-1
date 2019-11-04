@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:26:47 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/01 18:40:19 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/03 20:28:47 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
+	t_list *tmp;
+
 	if (!alst || !new)
 		return ;
 	if (*alst == NULL)
@@ -23,8 +25,9 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	}
 	else
 	{
-		while ((*alst)->next != NULL)
-			(*alst) = (*alst)->next;
-		(*alst)->next = new;
+		tmp = (*alst);
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
 }

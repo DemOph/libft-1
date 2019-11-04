@@ -6,13 +6,13 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/19 12:23:22 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/02 16:59:12 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/03 18:20:52 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	l_dest;
