@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:19:41 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/04 18:45:53 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:16:36 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,11 @@ void	ft(void *str)
 	}
 }
 
-void	*ft_f(void *str)
+void	*ft_f(void *a)
 {
-	int i;
-
-	i = 0;
-	while (*(char*)(str + i))
-	{
-		*(char*)(str + i) += 1;
-		i++;
-	}
-	return (str);
+	char *s = ft_strdup(a);
+	*s = *s + 1;
+	return ((void*)s);
 }
 
 int		main()
@@ -200,7 +194,7 @@ int		main()
 	}*/
 
 	//////////// BONUS ///////////////
-	/*
+	
 	int i;
 	t_list *h;
 	t_list *ls1;
@@ -240,7 +234,7 @@ int		main()
 	//printf("list size = %d\n", ft_lstsize(h));
 	//printf("the last ele is = %s\n", (char*)ft_lstlast(ls2)->content);
 	//ft_lstiter(ls1, ft);*/
-	/*res = ft_lstmap(ls1, ft_f, del);
+	res = ft_lstmap(ls1, ft_f, del);
 	while (h)
 	{
 		printf("ft_lstmap = %s\n", h->content);
@@ -252,5 +246,5 @@ int		main()
 		printf("ele list %d = %s\n", i, res->content);
 		res = res->next;
 		i++;
-	}*/
+	}
 }
