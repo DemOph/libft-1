@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:19:41 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/04 19:16:36 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/05 12:15:16 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		main()
 	//printf("strlen = %zu\n", strlen(NULL));
 	
 	//-- ft_atoi
-	//printf("ft_atoi = %d\natoi = %d\n", ft_atoi("1658"), atoi("1658"));
+	printf("ft_atoi = %d\natoi = %d\n", ft_atoi("-9999999999999999999999999"), atoi("1658"));
 	
 	//-- ft_isdigit
 	//printf("ft_isdigit = %d\n", ft_isdigit(97));
@@ -194,7 +194,7 @@ int		main()
 	}*/
 
 	//////////// BONUS ///////////////
-	
+	/*	
 	int i;
 	t_list *h;
 	t_list *ls1;
@@ -234,7 +234,7 @@ int		main()
 	//printf("list size = %d\n", ft_lstsize(h));
 	//printf("the last ele is = %s\n", (char*)ft_lstlast(ls2)->content);
 	//ft_lstiter(ls1, ft);*/
-	res = ft_lstmap(ls1, ft_f, del);
+	/*res = ft_lstmap(ls1, ft_f, del);
 	while (h)
 	{
 		printf("ft_lstmap = %s\n", h->content);
@@ -246,5 +246,5 @@ int		main()
 		printf("ele list %d = %s\n", i, res->content);
 		res = res->next;
 		i++;
-	}
+	}*/
 }

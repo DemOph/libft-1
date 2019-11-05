@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 12:51:49 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/30 14:38:02 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/05 18:50:11 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ char			*ft_strtrim(char const *s1, char const *set)
 	if (start == ft_strlen(s1))
 		return (ft_strdup(""));
 	end = the_end(s1, set, ft_strlen(s1) - 1);
-	if (end < start)
-		return ("");
 	str = malloc(sizeof(char) * ((end - start) + 2));
 	if (!str)
 		return (0);

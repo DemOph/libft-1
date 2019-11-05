@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 16:00:45 by iounejja          #+#    #+#             */
-/*   Updated: 2019/10/30 14:55:42 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/05 18:50:42 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char			**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (!(tab = malloc(sizeof(char*) * (n_words(s, c) + 1))) || !s)
+	if (!s || !(tab = malloc(sizeof(char*) * (n_words(s, c) + 1))))
 		return (NULL);
 	while (s[i] != '\0')
 	{

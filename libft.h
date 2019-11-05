@@ -6,18 +6,14 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:22:05 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/04 13:41:19 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/05 16:17:15 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <string.h>
 # include <stdlib.h>
-# include <fcntl.h>
-# include <ctype.h>
 # include <unistd.h>
 
 size_t				ft_strlen(char const *s);

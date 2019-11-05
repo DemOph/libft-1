@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:48:46 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/04 19:16:38 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/05 12:05:50 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		return (dst);
 	while (i < n)
 	{
-		*(char*)(dst + i) = *(char*)(src + i);
+		*(unsigned char*)(dst + i) = *(unsigned char*)(src + i);
 		i++;
 	}
 	return (dst);
