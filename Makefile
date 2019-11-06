@@ -6,7 +6,7 @@
 #    By: iounejja <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/16 11:08:59 by iounejja          #+#    #+#              #
-#    Updated: 2019/11/01 15:14:24 by iounejja         ###   ########.fr        #
+#    Updated: 2019/11/06 12:57:52 by iounejja         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,7 @@ bonus:	all $(B_OBJ)
 
 %.o : %.c
 	gcc -Wall -Wextra -Werror -c $< -o $@
+
 clean:
 	rm -f *.o
 
