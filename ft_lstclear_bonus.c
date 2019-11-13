@@ -6,7 +6,7 @@
 /*   By: iounejja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/26 16:01:48 by iounejja          #+#    #+#             */
-/*   Updated: 2019/11/05 13:10:00 by iounejja         ###   ########.fr       */
+/*   Updated: 2019/11/06 16:02:21 by iounejja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		free(*lst);
 		*lst = list;
 	}
-	*lst = NULL;
 }
